@@ -1,0 +1,123 @@
+--------------------------------------------------------------------------NOTE: Description ko nikaal e do, masla kar rai hy--------------------------
+The ny times: (https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml)
+<Item>:
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link> / <guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <media:content url="img-url-here" />
+
+The Guardian: (https://www.theguardian.com/international/rss)
+<Item>:
+	title: <title>html
+	description : <description>html (a little diff, see)
+	detailsUrl: <link> / <guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <media:content url="img-url-here" /> (second wala)
+
+CNN: (http://rss.cnn.com/rss/cnn_topstories.rss)
+<Item>: (but sbsy first wali kch diff. hy, usme <description> aur <pubDate> nai hy)
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link> \ <guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <media:group> -> <media:content url="img-url-here"> first wala
+
+Al Jazeera: (https://www.aljazeera.com/xml/rss/all.xml)
+<Item>:
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link>html
+	publishedAt: <pubDate> html
+	ImageSrc: NOT AVAILABLE HERE
+
+BBC News: (view-source:http://feeds.bbci.co.uk/news/rss.xml)
+<Item>:
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link> / <guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: NOT AVAILABLE HERE
+------------------------------------------------------------------------------ PAKISTANI NEWS ------------------------------
+The Nation News: (view-source:https://www.nation.com.pk/rss/top-stories)
+<Item>:
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <media:thumbnail url="img-url-here"> / <enclosure url="img-url-here" />
+
+
+The Express Tribune: (https://tribune.com.pk/feed/home)
+<Item>:
+	title: <title>html
+	description : <description>html
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <image>
+<img src="https://i.tribune.com.pk/media/images/1363806-_zkn__pakistamnday-1490266549/1363806-_zkn__pakistamnday-1490266549.jpg" class="featured_image"/>
+</image>
+
+
+The News International: (http://feeds.feedburner.com/com/Yeor)
+<Item>:
+	title: <title>html
+	description : <description>html (description k andr pehlay <image> k tag hy, usko nikal kar
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <description> <img src="""/>
+<description>
+<![CDATA[ <img src="https://www.thenews.com.pk/assets/uploads/updates/2023-10-01/l_1115049_061225_updates.jpg"/> ]]>
+<![CDATA[ Taylor Swift and Travis Kelce are in so much influence of each other ]]>
+</description>
+
+
+Daily Pakistan: (view-source:https://en.dailypakistan.com.pk/rss/top-news)
+<Item>:
+	title: <title>html
+	description : <description>html 
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <enclosure url="" /> OR <media:thumbnail url="" />
+<enclosure url="https://en.dailypakistan.com.pk/digital_images/large/2023-10-01/suicide-attack-rocks-government-building-near-turkiye-s-parliament-two-cops-injured-1696152994-4973.jpg" length="56288" type="image/jpeg"></enclosure>
+<media:thumbnail url="https://en.dailypakistan.com.pk/digital_images/small/2023-10-01/suicide-attack-rocks-government-building-near-turkiye-s-parliament-two-cops-injured-1696152994-4973.jpg"/>				
+					
+
+Ary News: (https://arynews.tv/feed/)
+<Item>:
+	title: <title>html
+	description : <description>html (but <img/> b isky andr hy, to dekh k)
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <description><div><img src="""/>
+<description>
+<![CDATA[<div>
+<img width="696" height="342" src="https://arynews.tv/wp-content/uploads/2022/10/Eidmilad.jpg" class="attachment-large size-large wp-post-image" alt="eid miladun nabi" decoding="async" style="margin-bottom: 15px;" fetchpriority="high" srcset="//arynews.tv/wp-content/uploads/2022/10/Eidmilad.jpg 750w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-300x148.jpg 300w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-150x74.jpg 150w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-600x295.jpg 600w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-696x342.jpg 696w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-324x160.jpg 324w, //arynews.tv/wp-content/uploads/2022/10/Eidmilad-533x261.jpg 533w" sizes="(max-width: 696px) 100vw, 696px" />
+</div>
+Eid Miladun Nabi (S.A.W.) is being celebrated with great religious zeal and fervour across the country today, ARY News reported. The day dawned with thirty one guns salute at the federal capital and twenty one guns salute at all the provincial capitals. Special prayers for the unity of Muslim Ummah and progress and prosperity of [&#8230;]]]>
+</description>
+
+
+Geo TV: (http://feeds.feedburner.com/geo/GiKR)
+<Item>:
+	title: <title>html
+	description : <description>html (description k andr pehlay <image> k tag hy, usko nikal kar
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <description> <img src="""/>
+<description>
+<![CDATA[ <img src="https://www.geo.tv/assets/uploads/updates/2023-10-01/l_512542_052647_updates.jpg"/> ]]>
+<![CDATA[ Exercise was aimed at further harnessing the historic military-to-military relations amongst brotherly countries, says ISPR ]]>
+</description>
+
+
+Pakistan Observer: (https://pakobserver.net/top-news/feed/)
+<Item>:
+	title: <title>html
+	description : <description>html (description k andr pehlay <image> k tag hy, usko nikal kar
+	detailsUrl: <link>/<guid>, html
+	publishedAt: <pubDate> html
+	ImageSrc: <description> <img src="""/>
+<description>
+<![CDATA[<img width="150" height="150" src="https://pakobserver.net/wp-content/uploads/2023/05/FBR-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="display: block; margin-bottom: 5px; clear:both;max-width: 100%;" link_thumbnail="" />ISLAMABAD &#8211; The Federal Board of Revenue (FBR) has extended the deadline for filing income tax returns for Tax Year 2023 by one month. The new deadline is October 31, 2023. The federal tax-collecting body has issued a notification stating that no further extensions will be provided, despite appeals from trade bodies and tax bar [&#8230;]]]>
+</description>
