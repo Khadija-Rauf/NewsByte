@@ -1,4 +1,4 @@
---------------------------------------------------------------------------NOTE: Description ko nikaal e do, masla kar rai hy--------------------------
+--------------------------------------------------------------------------NOTE: Description can create issue, so it can be skipped OR handled conditionally--------------------------
 The ny times: (https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml)
 <Item>:
 	title: <title>html
