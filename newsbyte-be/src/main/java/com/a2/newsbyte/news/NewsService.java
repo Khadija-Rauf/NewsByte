@@ -23,8 +23,6 @@ import java.util.List;
 public class NewsService {
 
     @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
     private NewsRepository newsRepository;
     @Autowired
     private TagService tagService;
@@ -207,6 +205,11 @@ public class NewsService {
         for (News newsItem : getLatest) {
             newsRepository.save(newsItem);
         }
+    }
+
+
+    public List<String> getAllTagsName() throws IOException {
+           return newsRepository.getAllTagsNames();
     }
 
 
