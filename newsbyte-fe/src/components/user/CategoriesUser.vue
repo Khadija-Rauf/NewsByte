@@ -14,27 +14,14 @@
            
             <li class="nav-item"  style="margin-right: 15px;">
                 <router-link to="/user" class="custom-link">Latest</router-link>
-             </li>
+            </li>
+          
+            <div v-for="(item, index) in tags.slice(0, tags.length)" :key="index">
+                <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: item }}" class="custom-link" style="text-transform: capitalize;">{{item}}</router-link>
+              </li>
+            </div> 
 
-             <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'technology' }}" class="custom-link">Technology</router-link>
-             </li>
-
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'sports' }}" class="custom-link">Sports</router-link>
-              </li>
-  
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'health' }}" class="custom-link">Health</router-link>
-              </li>
-
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'business' }}" class="custom-link">Business</router-link>
-              </li>
-              
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'entertainment' }}" class="custom-link">Entertainment</router-link>
-              </li>
            </ul>
           </div>
        </div>
@@ -65,14 +52,6 @@ import NewsCard from "./NewsCard";
     mounted() {
          this.category = this.$route.params.category;
        },
-
-
-  //  created() {
-   
-  //  this.category = this.$route.params.category;
-  //  console.log("i am generic card 92: "+this.category);
-  //  this.getNewsByCategory92(this.category);
-  //     },
 
       watch: {
     '$route.params.category': {
