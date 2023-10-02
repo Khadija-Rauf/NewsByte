@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-0.0.4
+      author: news team
+      changes:
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'Dawn'
+              - column:
+                  name: type
+                  value: local
+              - column:
+                  name: logo_url
+                  value: 'https://www.dawn.com/_img/logo.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.dawn.com/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The News International'
+              - column:
+                  name: type
+                  value: local
+              - column:
+                  name: logo_url
+                  value: 'https://www.thenews.com.pk/assets/front/images/Thenews-logo.svg'
+              - column:
+                  name: site_url
+                  value: 'https://www.thenews.com.pk/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The Express Tribune'
+              - column:
+                  name: type
+                  value: local
+              - column:
+                  name: logo_url
+                  value: 'https://i.tribune.com.pk/media/images/logos/tribune-logo.webp'
+              - column:
+                  name: site_url
+                  value: 'https://tribune.com.pk/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'BBC News'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'http://newsimg.bbc.co.uk/shared/bsp/xsl/rss/img/news_logo.gif'
+              - column:
+                  name: site_url
+                  value: 'https://www.bbc.com/news'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The New York Times'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.nytimes.com/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The Guardian'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://assets.guim.co.uk/images/guardian-logo-rss.c45beb1bafa34b347ac333af2e6fe23f.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.theguardian.com'

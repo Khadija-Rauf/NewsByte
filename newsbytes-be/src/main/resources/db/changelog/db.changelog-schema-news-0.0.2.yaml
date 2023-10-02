@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-0.0.2
+      author: news team
+      changes:
+        - createTable:
+            tableName: news
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: published_at
+                  type: varchar(50)
+              - column:
+                  name: image_source
+                  type: varchar(255)
+              - column:
+                  name: details_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: added_on
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tag_id
+                  type: bigint
+              - column:
+                  name: newspaper_id
+                  type: bigint
+        - addPrimaryKey:
+            tableName: news
+            columnNames: details_url
+            constraintName: news_pk
+        - addForeignKeyConstraint:
+            baseTableName: news
+            baseColumnNames: tag_id
+            referencedTableName: tags
+            referencedColumnNames: id
+            constraintName: fk_news_tags
+        - addForeignKeyConstraint:
+            baseTableName: news
+            baseColumnNames: newspaper_id
+            referencedTableName: newspapers
+            referencedColumnNames: id
+            constraintName: fk_news_newspapers
+        - createIndex:
+            tableName: news
+            indexName: news_ix_01
+            columns:
+              - column:
+                  name: tag_id
+        - createIndex:
+            tableName: news
+            indexName: news_ix_02
+            columns:
+              - column:
+                  name: newspaper_id

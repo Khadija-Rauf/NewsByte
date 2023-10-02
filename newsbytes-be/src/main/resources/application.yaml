@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: newsbyte
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: ${newsbyte.db.url}
+    username: ${newsbyte.db.username}
+    password: ${newsbyte.db.password}
+  h2:
+    console:
+      enabled: true
+#  liquibase:
+#    contexts: ${newsbyte.liquibase.contexts:}
+#  h2:
+#    console:
+#      enabled: ${newsbyte.h2.console:false}
+
+server:
+  port: 9081
+  servlet:
+    context-path: /newsbyte
+
+logging:
+  level:
+    sql: debug
+    web: debug
+    '[com.a2.newsbyte]': debug
+  pattern:
+    level: "%5p ${HOSTNAME}"
+  file:
+    name: ${newsbyte.log.dir:target}/newsbyte.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: when-authorized
+
+spring.profiles.include: local
+
+

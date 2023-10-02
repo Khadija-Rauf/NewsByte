@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-0.0.1
+      author: news team
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: uname
+                  value: editor
+              - column:
+                  name: password
+                  value: '$2a$12$LR8X7vbQ5M0TKSLOn8roU.oL.so94Gb1mAcmorDGhddhL93yYLFMO'
+              - column:
+                  name: roles
+                  value: EDITOR
+              - column:
+                  name: status
+                  value: ACTIVE

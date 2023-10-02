@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-0.0.3
+      author: news team
+      changes:
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: None
+              - column:
+                  name: description
+                  value: 'By default Tag'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Business
+              - column:
+                  name: description
+                  value: 'Business Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Sports
+              - column:
+                  name: description
+                  value: 'Sports Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Technology
+              - column:
+                  name: description
+                  value: 'Technology Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Entertainment
+              - column:
+                  name: description
+                  value: 'Entertainment Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Politics
+              - column:
+                  name: description
+                  value: 'Politics Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Crime
+              - column:
+                  name: description
+                  value: 'Crime Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Science
+              - column:
+                  name: description
+                  value: 'Science Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: Health
+              - column:
+                  name: description
+                  value: 'Health Description'
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: 'Fake News'
+              - column:
+                  name: description
+                  value: 'Fake News Description'
