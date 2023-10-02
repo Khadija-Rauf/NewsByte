@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-0.0.2
+      author: news team
+      changes:
+        - insert:
+            tableName: news
+            columns:
+              - column:
+                  name: title
+                  value: firstNews
+              - column:
+                  name: description
+                  value: firstDescription
+              - column:
+                  name: published_at
+                  value: firstPublished_at
+              - column:
+                  name: image_source
+                  value: firstImage_source
+              - column:
+                  name: details_url
+                  value: firstDetails_url
+              - column:
+                  name: added_on
+                  value: sept1
+        - insert:
+            tableName: news
+            columns:
+              - column:
+                  name: title
+                  value: firNews
+              - column:
+                  name: description
+                  value: firDescription
+              - column:
+                  name: published_at
+                  value: firPublished_at
+              - column:
+                  name: image_source
+                  value: firImage_source
+              - column:
+                  name: details_url
+                  value: firDetails_url
+              - column:
+                  name: added_on
+                  value: sept2

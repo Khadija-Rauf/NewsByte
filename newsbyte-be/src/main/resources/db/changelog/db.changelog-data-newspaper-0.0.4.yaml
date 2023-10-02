@@ -1,0 +1,98 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-0.0.4
+      author: news team
+      changes:
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'Dawn'
+              - column:
+                  name: type
+                  value: local
+              - column:
+                  name: logo_url
+                  value: 'https://www.dawn.com/_img/logo.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.dawn.com/'
+
+
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The New York Times'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.nytimes.com/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'The Guardian'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://assets.guim.co.uk/images/guardian-logo-rss.c45beb1bafa34b347ac333af2e6fe23f.png'
+              - column:
+                  name: site_url
+                  value: 'https://www.theguardian.com'
+
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: '92 News'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Nt1qiXlca291Du8hB3oq_CLAay-xHwkVSAjP4PSlSU8fmxv4-WLAZ8Kh27POdxQHQBM&usqp=CAU'
+              - column:
+                  name: site_url
+                  value: 'https://92newshd.tv/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'NyTimes'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Nt1qiXlca291Du8hB3oq_CLAay-xHwkVSAjP4PSlSU8fmxv4-WLAZ8Kh27POdxQHQBM&usqp=CAU'
+              - column:
+                  name: site_url
+                  value: 'https://www.nytimes.com/'
+        - insert:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: name
+                  value: 'Al-Jazeera'
+              - column:
+                  name: type
+                  value: world
+              - column:
+                  name: logo_url
+                  value: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Nt1qiXlca291Du8hB3oq_CLAay-xHwkVSAjP4PSlSU8fmxv4-WLAZ8Kh27POdxQHQBM&usqp=CAU'
+              - column:
+                  name: site_url
+                  value: 'https://www.aljazeera.com/'

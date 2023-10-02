@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-0.0.4
+      author: news team
+      changes:
+        - createTable:
+            tableName: newspapers
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(50)
+              - column:
+                  name: logo_url
+                  type: varchar(255)
+              - column:
+                  name: site_url
+                  type: varchar(255)
+        - addPrimaryKey:
+            tableName: newspapers
+            columnNames: id
+            constraintName: newspapers_pk
+        - addUniqueConstraint:
+            tableName: newspapers
+            columnNames: name
+            constraintName: newspapers_uk_01
