@@ -51,7 +51,7 @@ export default {
   methods: {
    async fetchTagOptions() {
              try {
-               const response = await axios.get('/newsbyte/api/v1/tags');
+               const response = await axios.get('/newsbyte/tags');
                this.tags = response.data.tags;
 
              } catch (error) {
