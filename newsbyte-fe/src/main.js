@@ -4,12 +4,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './index'
 
-const app = createApp(App);
 
-
-
-app.use(router);
-
-
-app.mount('#app') // Use the Vuex store
+createApp(App).use(router).mount("#app");
 

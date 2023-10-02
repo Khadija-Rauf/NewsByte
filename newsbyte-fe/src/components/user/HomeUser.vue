@@ -1,7 +1,7 @@
 <template>
     <div>
    <nav class="navbar navbar-expand-lg navbar-light">
-       <div class="container-fluid">
+       <div class="container-fluid" style="margin-top: 60px;">
   
   
          <a class="navbar-brand" href="#">Navbar</a>
@@ -15,13 +15,12 @@
             <li class="nav-item"  style="margin-right: 15px;">
                 <router-link to="/user" class="custom-link">Latest</router-link>
             </li>
+          
             <div v-for="(item, index) in tags.slice(0, tags.length)" :key="index">
                 <li class="nav-item"  style="margin-right: 15px;">
-                <button class="nav-button" id="item" @click="goToFetchNews(tags)" style="text-transform: capitalize;">tags</button>
-             </li>
-                
+                <router-link :to="{ name: 'CategoriesUser', params: { category: item }}" class="custom-link" style="text-transform: capitalize;">{{item}}</router-link>
+              </li>
             </div>
-
              
 
               <!-- <li class="nav-item"  style="margin-right: 15px;">
