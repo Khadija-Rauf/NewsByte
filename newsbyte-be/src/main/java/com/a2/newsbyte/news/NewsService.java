@@ -170,6 +170,9 @@ public class NewsService {
     }
 
     public List<News> getNewsByCategoryForUser(String category) throws IOException {
+        System.out.println("---------------------------------------");
+        System.out.println("category service: "+ category);
+        System.out.println("---------------------------------------");
         List<News> newsList = new ArrayList<>();
         List<String> channelNames = newsRepository.getAllChannelNames();
 
@@ -310,11 +313,7 @@ public class NewsService {
                 rssFeedUrl = alJazeeraRss;
                 break;
         }
-//        List<URL> urls = new ArrayList<>();
-//        urls.add(nyRssFeed);
-//        urls.add(alJazeeraRss);
         List<News> entryList = new ArrayList<>();
-//        for (URL rssFeed: urls) {
             try {
                 SyndFeedInput input = new SyndFeedInput();
                 SyndFeed feed = input.build(new XmlReader(rssFeedUrl));

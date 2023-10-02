@@ -12,7 +12,7 @@
 
    <div class="col-8">
         <div class="row" v-for="i in rowsCount" :key="i" style="flex:1">
-          <div class="col" v-for="j in 3" :key="j">
+          <div class="col" v-for="j in 3 & j != (newsItems.length+1)" :key="j">
               <a :href="newsItems[((i-1)*3)+(j-1)].url" style="text-decoration: none;">
                   <div class="card text-center card-container" style="border: none;">
                     <img class="card-img-top" :src="newsItems[((i-1)*3)+(j-1)].imageSource" alt="Card image cap" style="width: 250px; height: 150px; object-fit: cover;">
@@ -27,7 +27,7 @@
     </div>
 
   <div class="col-3" style="margin-left: 40px; border-left: 1px solid #000;">
-  <div v-for="i in displayInCol" :key="i">
+  <div v-for="i in displayInCol & i != (newsItems.length+1)" :key="i">
     <a :href="newsItems[(rowsCount*3)+(i-1)].url" style="text-decoration: none;">
       <div class="row" style="border: none; margin-bottom: 20px;">
 

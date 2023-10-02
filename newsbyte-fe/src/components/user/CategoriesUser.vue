@@ -44,6 +44,7 @@ import NewsCard from "./NewsCard";
         rowsCount:0,
         displayInCol:0,
         category:'',
+        tags: [],
       };
     },
     components: {
@@ -51,6 +52,7 @@ import NewsCard from "./NewsCard";
     },
     mounted() {
          this.category = this.$route.params.category;
+          this.getTags();
        },
 
       watch: {
@@ -78,14 +80,40 @@ import NewsCard from "./NewsCard";
           });
       },
       firstHalfItems() {
-      this.displayInCol = this.newsItems.length / 3;
-      this.rowsCount = Math.floor((this.newsItems.length - this.displayInCol)/ 3);
-  
-      if ((this.newsItems.length - this.displayInColumn) % 3 != 0) {
-        this.displayInCol += (this.newsItems.length - this.displayInCol) % 3;
-        
+
+      if(this.newsItems.length < 3)
+      {
+        this.rowsCount = 1;
+        this.displayInCol = 1;
       }
+      else
+      {
+        this.displayInCol = this.newsItems.length / 3;
+        this.rowsCount = Math.floor((this.newsItems.length - this.displayInCol)/ 3);
   
+        if ((this.newsItems.length - this.displayInColumn) % 3 != 0) 
+        {
+          this.displayInCol += (this.newsItems.length - this.displayInCol) % 3;
+        
+        }
+
+      }
+      
+      console.log(this.rowsCount);
+      console.log(this.displayInCol);
+  
+    },
+
+    getTags() {
+      NewsService.getTags()
+        .then((response) => {
+          console.log("tags: " +response.data);
+          this.tags = response.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching tags in home:", error);
+        });
+
     },
     },
   };

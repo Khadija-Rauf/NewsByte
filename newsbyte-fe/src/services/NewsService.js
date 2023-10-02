@@ -10,6 +10,8 @@ class NewsService{
     }
     getNewsByCategoryUser(category)
     {
+        console.log("category serviec: "+category);
+        console.log(`${GET_NEWS_USER}/${category}`);
         return axios.get(`${GET_NEWS_USER}/${category}`);
     }
     getTags()

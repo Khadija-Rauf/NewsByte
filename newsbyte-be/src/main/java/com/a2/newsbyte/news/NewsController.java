@@ -40,6 +40,9 @@ public class NewsController {
     }
     @GetMapping("/{category}")
     public List<News> getNewsByCategoryForUser(@PathVariable String category) throws IOException {
+        System.out.println("---------------------------------------");
+        System.out.println("category controller: "+ category);
+        System.out.println("---------------------------------------");
         return newsService.getNewsByCategoryForUser(category);
     }
 

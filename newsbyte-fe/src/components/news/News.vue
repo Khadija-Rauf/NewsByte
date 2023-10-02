@@ -69,7 +69,7 @@ components: {
 
     async fetchNewsByType(newsType) {
           try {
-            const response = await axios.get(`/newsbyte/api/v1/news?type=${newsType}`);
+            const response = await axios.get(`/newsbyte/news?type=${newsType}`);
             this.news = response.data.news;
 
           } catch (error) {

@@ -183,7 +183,6 @@
 </template>
 <script>
 import NewsService from "../../services/NewsService";
-import router from '../../index';
 
 export default {
   name: "HomeUser",
@@ -223,12 +222,6 @@ export default {
         });
 
     },
-    goToFetchNews(category) {
-        console.log(category);
-        router.push('CategoriesUser',{ category: {category} }) ;
-        
-    }
-   
 
     },
   
