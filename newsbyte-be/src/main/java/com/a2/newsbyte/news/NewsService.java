@@ -362,10 +362,6 @@ public class NewsService {
         }
     }
 
-    public List<String > getAllTags() throws IOException, FeedException {
-            return newsRepository.getAllTags();
-    }
-
     /************************************************************************************************/
 
 

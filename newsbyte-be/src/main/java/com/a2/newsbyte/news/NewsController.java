@@ -48,11 +48,6 @@ public class NewsController {
         newsService.fetchAndSaveAll();
     }
 
-    @GetMapping("/tags")
-    public List<String > getAllTags() throws IOException, FeedException {
-        return newsService.getAllTags();
-    }
-
     /***************************************************************************************************************************************/
 
 }
