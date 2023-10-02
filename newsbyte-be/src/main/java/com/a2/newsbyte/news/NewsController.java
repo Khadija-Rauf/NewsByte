@@ -1,6 +1,7 @@
 package com.a2.newsbyte.news;
 
 import com.a2.newsbyte.tag.Tag;
+import com.rometools.rome.io.FeedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class NewsController {
 
 
     @GetMapping("/newspaper")
-    public ResponseEntity<Map<String, List<News>>> getNews(@RequestParam(name = "newspaper") String newspaper) throws IOException {
+    public ResponseEntity<Map<String, List<News>>> getNews(@RequestParam(name = "newspaper") String newspaper) throws IOException, FeedException {
         return ResponseEntity.status(HttpStatus.OK).body(Map.of("news", newsService.fetchLatestNews(newspaper)));
     }
 
@@ -30,14 +31,6 @@ public class NewsController {
     {
         return ResponseEntity.status(HttpStatus.OK).body(Map.of("news", newsService.assignTagById(id, tag)));
     }
-
-
-
-
-
-
-
-
 
 
     /***************************************************************************************************************************************/
@@ -51,7 +44,7 @@ public class NewsController {
     }
 
     @GetMapping
-    public void fetchAndSaveAll() throws IOException {
+    public void fetchAndSaveAll() throws IOException, FeedException {
         newsService.fetchAndSaveAll();
     }
 
