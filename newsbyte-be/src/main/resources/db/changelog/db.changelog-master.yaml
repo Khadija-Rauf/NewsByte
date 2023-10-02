@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog-schema-user-0.0.1.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-data-user-0.0.1.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-schema-tag-0.0.3.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-data-tag-0.0.3.yaml
+      relativeToChangelogFile: true
+      context: local
+  - include:
+      file: db.changelog-schema-newspaper-0.0.4.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-data-newspaper-0.0.4.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-schema-news-0.0.2.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-data-news-0.0.2.yaml
+      relativeToChangelogFile: true
+      context: local

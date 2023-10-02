@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-0.0.1
+      author: news team
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: uname
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: roles
+                  type: varchar(255)
+              - column:
+                  name: status
+                  type: varchar(10)
+        - addPrimaryKey:
+            tableName: users
+            columnNames: id
+            constraintName: users_pk
+        - addUniqueConstraint:
+            tableName: users
+            columnNames: uname
+            constraintName: users_uk_01
