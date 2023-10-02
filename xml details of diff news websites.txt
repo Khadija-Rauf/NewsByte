@@ -98,19 +98,6 @@ Eid Miladun Nabi (S.A.W.) is being celebrated with great religious zeal and ferv
 </description>
 
 
-Geo TV: (http://feeds.feedburner.com/geo/GiKR)
-<Item>:
-	title: <title>html
-	description : <description>html (description k andr pehlay <image> k tag hy, usko nikal kar
-	detailsUrl: <link>/<guid>, html
-	publishedAt: <pubDate> html
-	ImageSrc: <description> <img src="""/>
-<description>
-<![CDATA[ <img src="https://www.geo.tv/assets/uploads/updates/2023-10-01/l_512542_052647_updates.jpg"/> ]]>
-<![CDATA[ Exercise was aimed at further harnessing the historic military-to-military relations amongst brotherly countries, says ISPR ]]>
-</description>
-
-
 Pakistan Observer: (https://pakobserver.net/top-news/feed/)
 <Item>:
 	title: <title>html
