@@ -51,10 +51,10 @@ public class NewsController {
 
     /***************************************************************************************************************************************/
 
-//    @GetMapping("/trending")
-//    public List<News> getTrendingNews(){
-//        return newsService.getTrendingNews();
-//    }
+    @GetMapping("/trending")
+    public List<News> getTrendingNews(){
+        return newsService.getTrendingNews();
+    }
 
 }
 

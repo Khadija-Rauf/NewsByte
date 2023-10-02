@@ -44,6 +44,13 @@ public interface NewsRepository extends JpaRepository<News, Long> {
 
     @Query(value="select DISTINCT name from newspapers", nativeQuery = true)
     List<String> getAllChannelNames();
-//    @Query(value = "select *, Count(t.id) as tag_count from news ")
-//    List<News> findTop3TrendingNews();
+
+    @Query(value = "select * from news group by title, published_at, image_source, details_url order by count(tag_id) limit 3" , nativeQuery = true)
+//            "from news n " +
+//            "left join tags t " +
+//            "on n.tag_id = t.id " +
+//            "group by n.title, n.published_at, n.image_source, n.details_url " +
+//            "order by tag_count desc" +
+//            "limit 3")
+    List<News> findTop3TrendingNews();
 }

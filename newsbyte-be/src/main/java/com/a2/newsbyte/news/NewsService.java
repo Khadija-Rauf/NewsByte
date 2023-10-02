@@ -217,11 +217,7 @@ public class NewsService {
                 rssFeedUrl = alJazeeraRss;
                 break;
         }
-//        List<URL> urls = new ArrayList<>();
-//        urls.add(nyRssFeed);
-//        urls.add(alJazeeraRss);
         List<News> entryList = new ArrayList<>();
-//        for (URL rssFeed: urls) {
             try {
                 SyndFeedInput input = new SyndFeedInput();
                 SyndFeed feed = input.build(new XmlReader(rssFeedUrl));
@@ -277,10 +273,10 @@ public class NewsService {
 
     /************************************************************************************************/
 
-//    public List<News> getTrendingNews(){
-//        List<News> trendingNews = newsRepository.findTop3TrendingNews();
-//        return trendingNews;
-//    }
+    public List<News> getTrendingNews(){
+        List<News> trendingNews = newsRepository.findTop3TrendingNews();
+        return trendingNews;
+    }
 
 
 
