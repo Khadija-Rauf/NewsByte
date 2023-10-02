@@ -33,7 +33,6 @@ public class NewsController {
     }
 
 
-
     /***************************************************************************************************************************************/
     @GetMapping("/latestAll")
     public List<News> getAllLatestNewsForUser() throws IOException {
@@ -50,11 +49,6 @@ public class NewsController {
     }
 
     /***************************************************************************************************************************************/
-
-//    @GetMapping("/trending")
-//    public List<News> getTrendingNews(){
-//        return newsService.getTrendingNews();
-//    }
 
 }
 

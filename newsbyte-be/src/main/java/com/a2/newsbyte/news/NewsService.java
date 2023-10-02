@@ -3,20 +3,18 @@ package com.a2.newsbyte.news;
 import com.a2.newsbyte.newspaper.NewspaperService;
 import com.a2.newsbyte.tag.Tag;
 import com.a2.newsbyte.tag.TagService;
-//import com.fasterxml.jackson.databind.JsonNode;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.scheduling.annotation.Async;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-//import org.springframework.web.util.UriBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -27,6 +25,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class NewsService {
@@ -343,6 +350,8 @@ public class NewsService {
         List<News> newsAry = getNewsAry();
         List<News> nyNews = getNewsByRss("NyTimes");
         List<News> alJazeeraNews = getNewsByRss("Al-Jazeera");
+    public void fetchAndSaveAll() throws IOException {
+        List<News> news92 = getNews92();
         /*
         *           call all other news channel functions
         */
@@ -350,6 +359,7 @@ public class NewsService {
         allNews.addAll(newsAry);
         allNews.addAll(nyNews);
         allNews.addAll(alJazeeraNews);
+
 
         /*
         *       add your's list of news into allNews object
@@ -365,10 +375,6 @@ public class NewsService {
 
     /************************************************************************************************/
 
-//    public List<News> getTrendingNews(){
-//        List<News> trendingNews = newsRepository.findTop3TrendingNews();
-//        return trendingNews;
-//    }
 
 
 

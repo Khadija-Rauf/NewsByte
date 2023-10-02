@@ -45,8 +45,6 @@ management:
 # enter your rss feeds url here
 news.nyTimes.rss: https://rss.app/feeds/IAum5K6vNeEXKdVb.xml
 news.alJazeera.rss: https://rss.app/feeds/T46MCNPSSphWj6xr.xml
-
-
 spring.profiles.include: local
 
 
