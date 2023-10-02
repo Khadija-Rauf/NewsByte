@@ -1,0 +1,126 @@
+<template>
+    <div>
+   <nav class="navbar navbar-expand-lg navbar-light">
+       <div class="container-fluid">
+  
+  
+         <a class="navbar-brand" href="#">Navbar</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+          <img src="../../assets/logo.png" alt="Logo" class="logo-image" style="width:2.5cm; padding-right:1cm;  " />
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           
+            <li class="nav-item"  style="margin-right: 15px;">
+                <router-link to="/user" class="custom-link">Latest</router-link>
+             </li>
+
+             <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: 'technology' }}" class="custom-link">Technology</router-link>
+             </li>
+
+              <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: 'sports' }}" class="custom-link">Sports</router-link>
+              </li>
+  
+              <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: 'health' }}" class="custom-link">Health</router-link>
+              </li>
+
+              <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: 'business' }}" class="custom-link">Business</router-link>
+              </li>
+              
+              <li class="nav-item"  style="margin-right: 15px;">
+                <router-link :to="{ name: 'CategoriesUser', params: { category: 'entertainment' }}" class="custom-link">Entertainment</router-link>
+              </li>
+           </ul>
+          </div>
+       </div>
+     </nav>
+</div>
+    <div>
+      <NewsCard :newsItems="newsItems" :rowsCount="rowsCount" :displayInCol="displayInCol" :category="category" :channel="channel"/>
+    </div>
+  </template>
+  
+  <script>
+import NewsService from "../../services/NewsService";
+import NewsCard from "./NewsCard";
+  
+  export default {
+    name: 'CategoriesUser',
+    data() {
+      return {
+        newsItems: [],
+        rowsCount:0,
+        displayInCol:0,
+        category:'',
+      };
+    },
+    components: {
+        NewsCard,
+    },
+    mounted() {
+         this.category = this.$route.params.category;
+       },
+
+
+  //  created() {
+   
+  //  this.category = this.$route.params.category;
+  //  console.log("i am generic card 92: "+this.category);
+  //  this.getNewsByCategory92(this.category);
+  //     },
+
+      watch: {
+    '$route.params.category': {
+      handler(newCategory) {
+        if (newCategory !== this.category) {
+          this.category = newCategory;
+          this.getNewsByCategoryUser(newCategory);
+        }
+      },
+      immediate: true, // Trigger on initial load
+    },
+  },
+  
+    methods: {
+        getNewsByCategoryUser(category) {
+        NewsService.getNewsByCategoryUser(category)
+          .then((response) => {
+            console.log("i am generic card after response: "+this.category);
+            this.newsItems = response.data;
+            this.firstHalfItems();
+          })
+          .catch((error) => {
+            console.error("Error fetching data in categories:", error);
+          });
+      },
+      firstHalfItems() {
+      this.displayInCol = this.newsItems.length / 3;
+      this.rowsCount = Math.floor((this.newsItems.length - this.displayInCol)/ 3);
+  
+      if ((this.newsItems.length - this.displayInColumn) % 3 != 0) {
+        this.displayInCol += (this.newsItems.length - this.displayInCol) % 3;
+        
+      }
+  
+    },
+    },
+  };
+  </script>
+  <style>
+  .navbar{
+  margin-top: -1.5cm;
+  background-color:black;
+  
+  }
+
+   .custom-link {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color to white */
+}
+
+  </style>

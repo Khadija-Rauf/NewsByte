@@ -350,23 +350,12 @@ public class NewsService {
         List<News> newsAry = getNewsAry();
         List<News> nyNews = getNewsByRss("NyTimes");
         List<News> alJazeeraNews = getNewsByRss("Al-Jazeera");
-    public void fetchAndSaveAll() throws IOException {
-        List<News> news92 = getNews92();
-        /*
-        *           call all other news channel functions
-        */
+
         List<News> allNews = new ArrayList<>(news92);
         allNews.addAll(newsAry);
         allNews.addAll(nyNews);
         allNews.addAll(alJazeeraNews);
 
-
-        /*
-        *       add your's list of news into allNews object
-        */
-
-
-        /*    You have nothing to do with the below code      */
         List<News> getLatest = extractOnlyNewNews(allNews);
         for (News newsItem : getLatest) {
             newsRepository.save(newsItem);
