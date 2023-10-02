@@ -7,13 +7,13 @@ import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -25,15 +25,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class NewsService {
@@ -183,7 +174,6 @@ public class NewsService {
     }
 
     public List<News> getNews92(){
-        System.out.println("\n in 92 service fetch \n");
         String url = "https://92newshd.tv/latest-news";
         List<News> articles = new ArrayList<>();
         try {
@@ -247,6 +237,7 @@ public class NewsService {
                             }
                             String title = (titleElement != null) ? titleElement.attr("title") : "No Title Found";
                             String publishedAt = getDate(hrefValue);
+//                            String description = news.select(".td-excerpt").text();
                             Element span = news.select("span.entry-thumb").first();
                             String imageUrl = "";
                             if (span != null) {
@@ -345,17 +336,27 @@ public class NewsService {
         }
         return imageUrl;
     }
+    @Scheduled(fixedDelay = 1000)
     public void fetchAndSaveAll() throws IOException, FeedException {
         List<News> news92 = getNews92();
         List<News> newsAry = getNewsAry();
         List<News> nyNews = getNewsByRss("NyTimes");
         List<News> alJazeeraNews = getNewsByRss("Al-Jazeera");
-
+        /*
+        *           call all other news channel functions
+        */
         List<News> allNews = new ArrayList<>(news92);
         allNews.addAll(newsAry);
         allNews.addAll(nyNews);
         allNews.addAll(alJazeeraNews);
 
+
+        /*
+        *       add your's list of news into allNews object
+        */
+
+
+        /*    You have nothing to do with the below code      */
         List<News> getLatest = extractOnlyNewNews(allNews);
         for (News newsItem : getLatest) {
             newsRepository.save(newsItem);

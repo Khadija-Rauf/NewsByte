@@ -3,7 +3,6 @@ package com.a2.newsbyte.news;
 import com.a2.newsbyte.newspaper.Newspaper;
 import com.a2.newsbyte.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
