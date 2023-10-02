@@ -19,7 +19,7 @@ public class NewsController {
     private NewsService newsService;
 
 
-    @GetMapping
+    @GetMapping("/newspaper")
     public ResponseEntity<Map<String, List<News>>> getNews(@RequestParam(name = "newspaper") String newspaper) throws IOException {
         return ResponseEntity.status(HttpStatus.OK).body(Map.of("news", newsService.fetchLatestNews(newspaper)));
     }
@@ -50,7 +50,7 @@ public class NewsController {
         return newsService.getNewsByCategoryForUser(category);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public void fetchAndSaveAll() throws IOException {
         newsService.fetchAndSaveAll();
     }
