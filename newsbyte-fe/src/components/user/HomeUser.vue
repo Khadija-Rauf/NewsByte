@@ -23,23 +23,6 @@
             </div>
 
              
-
-              <!-- <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'sports' }}" class="custom-link">Sports</router-link>
-              </li>
-  
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'health' }}" class="custom-link">Health</router-link>
-              </li>
-
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'business' }}" class="custom-link">Business</router-link>
-              </li>
-              
-              <li class="nav-item"  style="margin-right: 15px;">
-                <router-link :to="{ name: 'CategoriesUser', params: { category: 'entertainment' }}" class="custom-link">Entertainment</router-link>
-              </li> -->
-
            </ul>
           </div>
        </div>
